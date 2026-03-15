@@ -1,0 +1,1689 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hochzeitsfotografen Vorarlberg – Der Vergleich</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #0e0c0a;
+  --bg2: #161410;
+  --bg3: #1e1a16;
+  --card: #1a1612;
+  --border: rgba(210,175,120,0.18);
+  --gold: #c9a96e;
+  --gold-light: #e8d4a8;
+  --gold-dim: rgba(201,169,110,0.25);
+  --cream: #f2ead8;
+  --muted: #8a7e6e;
+  --text: #e8dfc8;
+  --accent: #d4a853;
+  --tag-bg: rgba(201,169,110,0.12);
+  --radius: 4px;
+  --transition: 0.28s cubic-bezier(0.4,0,0.2,1);
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 300;
+  font-size: 14.5px;
+  line-height: 1.65;
+  min-height: 100vh;
+}
+
+/* SCROLLBAR */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--bg2); }
+::-webkit-scrollbar-thumb { background: var(--gold-dim); border-radius: 3px; }
+
+/* HEADER */
+.header {
+  background: linear-gradient(180deg, #0a0806 0%, var(--bg) 100%);
+  border-bottom: 1px solid var(--border);
+  padding: 60px 40px 50px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.header::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(201,169,110,0.06) 0%, transparent 70%);
+  pointer-events: none;
+}
+.header-ornament {
+  font-size: 11px;
+  letter-spacing: 4px;
+  color: var(--gold);
+  text-transform: uppercase;
+  margin-bottom: 18px;
+  opacity: 0.85;
+}
+.header h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(36px, 5vw, 64px);
+  font-weight: 300;
+  letter-spacing: -0.5px;
+  color: var(--cream);
+  line-height: 1.1;
+  margin-bottom: 12px;
+}
+.header h1 em {
+  font-style: italic;
+  color: var(--gold-light);
+}
+.header-sub {
+  color: var(--muted);
+  font-size: 14px;
+  letter-spacing: 0.5px;
+  margin-bottom: 44px;
+  max-width: 520px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* STATS BAR */
+.stats-bar {
+  display: flex;
+  justify-content: center;
+  gap: 0;
+  flex-wrap: wrap;
+  max-width: 860px;
+  margin: 0 auto;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  backdrop-filter: blur(8px);
+}
+.stat {
+  flex: 1;
+  min-width: 140px;
+  padding: 20px 24px;
+  border-right: 1px solid var(--border);
+  text-align: center;
+  background: rgba(255,255,255,0.02);
+}
+.stat:last-child { border-right: none; }
+.stat-value {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 32px;
+  font-weight: 400;
+  color: var(--gold);
+  line-height: 1;
+  margin-bottom: 5px;
+}
+.stat-label { font-size: 11px; color: var(--muted); letter-spacing: 1.5px; text-transform: uppercase; }
+
+/* BUDGET GUIDE */
+.budget-section {
+  padding: 48px 40px;
+  border-bottom: 1px solid var(--border);
+  background: var(--bg2);
+}
+.budget-section h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 28px;
+  font-weight: 300;
+  color: var(--cream);
+  margin-bottom: 6px;
+}
+.section-lead { color: var(--muted); font-size: 13px; margin-bottom: 28px; }
+.budget-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2px;
+  max-width: 960px;
+}
+.budget-card {
+  padding: 22px 20px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  position: relative;
+  cursor: pointer;
+  transition: var(--transition);
+}
+.budget-card:hover, .budget-card.active {
+  border-color: var(--gold);
+  background: rgba(201,169,110,0.06);
+}
+.budget-card.active::after {
+  content: '';
+  position: absolute; bottom: -2px; left: 0; right: 0;
+  height: 2px; background: var(--gold);
+}
+.budget-range {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 22px;
+  color: var(--gold);
+  font-weight: 400;
+  margin-bottom: 8px;
+}
+.budget-title { font-size: 12px; font-weight: 500; color: var(--cream); letter-spacing: 0.5px; margin-bottom: 8px; }
+.budget-desc { font-size: 12px; color: var(--muted); line-height: 1.5; }
+
+/* MAIN LAYOUT */
+.main-layout {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  min-height: calc(100vh - 200px);
+}
+@media (max-width: 800px) {
+  .main-layout { grid-template-columns: 1fr; }
+  .sidebar { display: none; }
+  .mobile-filter-btn { display: block !important; }
+}
+
+/* SIDEBAR */
+.sidebar {
+  background: var(--bg2);
+  border-right: 1px solid var(--border);
+  padding: 32px 24px;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow-y: auto;
+}
+.sidebar-title {
+  font-size: 10px;
+  letter-spacing: 2.5px;
+  color: var(--gold);
+  text-transform: uppercase;
+  margin-bottom: 24px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+}
+.filter-group { margin-bottom: 28px; }
+.filter-label {
+  font-size: 10px;
+  letter-spacing: 2px;
+  color: var(--muted);
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  display: block;
+}
+.filter-options { display: flex; flex-direction: column; gap: 4px; }
+.filter-option {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 7px 10px;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: var(--transition);
+  border: 1px solid transparent;
+  font-size: 13px;
+  color: var(--muted);
+  user-select: none;
+}
+.filter-option:hover { background: var(--tag-bg); color: var(--text); }
+.filter-option.selected { background: var(--tag-bg); border-color: var(--gold-dim); color: var(--gold-light); }
+.filter-check {
+  width: 14px; height: 14px;
+  border: 1px solid var(--border);
+  border-radius: 2px;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+  transition: var(--transition);
+}
+.filter-option.selected .filter-check {
+  background: var(--gold);
+  border-color: var(--gold);
+}
+.filter-check::after {
+  content: '✓';
+  font-size: 9px;
+  color: #0e0c0a;
+  display: none;
+}
+.filter-option.selected .filter-check::after { display: block; }
+.filter-count {
+  margin-left: auto;
+  font-size: 10px;
+  color: var(--muted);
+  background: rgba(255,255,255,0.04);
+  padding: 1px 6px;
+  border-radius: 10px;
+}
+
+/* PRICE RANGE */
+.price-range-display {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 20px;
+  color: var(--gold);
+  margin-bottom: 10px;
+}
+.range-wrap { position: relative; }
+input[type=range] {
+  width: 100%;
+  -webkit-appearance: none;
+  background: transparent;
+  cursor: pointer;
+  margin: 4px 0;
+}
+input[type=range]::-webkit-slider-track {
+  height: 3px;
+  background: var(--border);
+  border-radius: 2px;
+}
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 16px; height: 16px;
+  background: var(--gold);
+  border-radius: 50%;
+  margin-top: -6.5px;
+  box-shadow: 0 0 8px rgba(201,169,110,0.4);
+}
+
+/* SORT BAR */
+.sort-bar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 32px;
+  border-bottom: 1px solid var(--border);
+  background: var(--bg2);
+}
+.sort-label { font-size: 11px; color: var(--muted); letter-spacing: 1px; text-transform: uppercase; }
+.sort-btn {
+  padding: 6px 14px;
+  border-radius: 20px;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--muted);
+  font-size: 12px;
+  cursor: pointer;
+  transition: var(--transition);
+  font-family: 'DM Sans', sans-serif;
+}
+.sort-btn:hover { border-color: var(--gold-dim); color: var(--text); }
+.sort-btn.active { background: var(--gold-dim); border-color: var(--gold); color: var(--gold-light); }
+.results-count { margin-left: auto; font-size: 12px; color: var(--muted); }
+.results-count span { color: var(--gold); font-family: 'Cormorant Garamond', serif; font-size: 16px; }
+.reset-btn {
+  padding: 5px 12px;
+  border: 1px solid rgba(201,169,110,0.2);
+  background: transparent;
+  color: var(--muted);
+  font-size: 11px;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: var(--transition);
+  font-family: 'DM Sans', sans-serif;
+}
+.reset-btn:hover { border-color: var(--gold); color: var(--gold); }
+
+/* PHOTOGRAPHER GRID */
+.photo-grid {
+  padding: 28px 32px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 16px;
+  align-content: start;
+}
+.empty-state {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 80px 20px;
+  color: var(--muted);
+}
+.empty-state-icon { font-size: 40px; margin-bottom: 16px; opacity: 0.4; }
+
+/* PHOTO CARD */
+.photo-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 0;
+  overflow: hidden;
+  transition: var(--transition);
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+.photo-card:hover {
+  border-color: rgba(201,169,110,0.45);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.4), 0 0 0 1px rgba(201,169,110,0.1);
+}
+.card-header {
+  padding: 20px 20px 14px;
+  border-bottom: 1px solid var(--border);
+}
+.card-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 20px;
+  font-weight: 400;
+  color: var(--cream);
+  line-height: 1.2;
+  margin-bottom: 3px;
+}
+.card-studio {
+  font-size: 11px;
+  color: var(--gold);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+.card-body { padding: 14px 20px; flex: 1; }
+.card-location {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: var(--muted);
+  margin-bottom: 10px;
+}
+.card-location::before { content: '◎'; font-size: 10px; color: var(--gold); }
+.card-desc { font-size: 12.5px; color: var(--muted); line-height: 1.55; margin-bottom: 14px; }
+.tags { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 12px; }
+.tag {
+  font-size: 10.5px;
+  padding: 3px 9px;
+  border-radius: 2px;
+  background: var(--tag-bg);
+  color: var(--gold-light);
+  border: 1px solid rgba(201,169,110,0.15);
+  letter-spacing: 0.3px;
+}
+.tag.style { background: rgba(255,255,255,0.04); color: var(--muted); border-color: transparent; }
+.feature-list { display: flex; flex-wrap: wrap; gap: 6px; }
+.feature {
+  font-size: 10.5px;
+  color: var(--muted);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.feature::before { content: '✦'; font-size: 7px; color: var(--gold-dim); }
+.card-footer {
+  padding: 14px 20px;
+  border-top: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(0,0,0,0.15);
+}
+.price-main {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 26px;
+  font-weight: 400;
+  color: var(--gold);
+  line-height: 1;
+}
+.price-sub { font-size: 10px; color: var(--muted); margin-top: 2px; }
+.price-cat {
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 2px;
+  border: 1px solid;
+}
+.price-cat.budget { color: #8fb886; border-color: rgba(143,184,134,0.35); background: rgba(143,184,134,0.06); }
+.price-cat.mid { color: var(--gold); border-color: var(--gold-dim); background: var(--tag-bg); }
+.price-cat.premium { color: #c9a0d0; border-color: rgba(201,160,208,0.3); background: rgba(201,160,208,0.06); }
+.website-link {
+  font-size: 11px;
+  color: var(--gold-dim);
+  text-decoration: none;
+  letter-spacing: 0.5px;
+  transition: var(--transition);
+  padding: 4px 0;
+  border-bottom: 1px solid transparent;
+}
+.website-link:hover { color: var(--gold); border-bottom-color: var(--gold-dim); }
+.no-price { font-size: 12px; color: var(--muted); font-style: italic; }
+
+/* PRICE CATEGORY BADGE on card */
+.card-ribbon {
+  position: absolute;
+  top: 0; right: 0;
+  font-size: 9px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 5px 12px;
+  color: var(--bg);
+  font-weight: 500;
+}
+.card-ribbon.duo { background: var(--gold); }
+.card-ribbon.video { background: #7a9cc5; }
+.card-ribbon.award { background: #c9a0d0; }
+
+/* COST COMPARISON TABLE */
+.cost-section {
+  padding: 48px 40px;
+  border-top: 1px solid var(--border);
+  background: var(--bg2);
+}
+.cost-section h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 30px;
+  font-weight: 300;
+  color: var(--cream);
+  margin-bottom: 6px;
+}
+.cost-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+  margin-top: 28px;
+}
+.cost-item {
+  padding: 18px 20px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+.cost-item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+.cost-item-name { font-size: 13px; font-weight: 500; color: var(--cream); }
+.cost-item-badge {
+  font-size: 9.5px;
+  padding: 2px 7px;
+  border-radius: 2px;
+  letter-spacing: 1px;
+}
+.included { background: rgba(143,184,134,0.12); color: #8fb886; }
+.extra { background: rgba(201,169,110,0.1); color: var(--gold); }
+.varies { background: rgba(160,160,170,0.1); color: #9090a0; }
+.cost-price { font-family: 'Cormorant Garamond', serif; font-size: 18px; color: var(--gold); margin-bottom: 4px; }
+.cost-note { font-size: 11.5px; color: var(--muted); line-height: 1.5; }
+
+/* TIPS SECTION */
+.tips-section {
+  padding: 48px 40px;
+  border-top: 1px solid var(--border);
+}
+.tips-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 16px;
+  margin-top: 28px;
+}
+.tip-card {
+  padding: 22px 20px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+.tip-number {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 40px;
+  color: rgba(201,169,110,0.15);
+  line-height: 1;
+  margin-bottom: 8px;
+}
+.tip-title { font-size: 13px; font-weight: 500; color: var(--cream); margin-bottom: 8px; }
+.tip-text { font-size: 12.5px; color: var(--muted); line-height: 1.6; }
+
+/* MODAL */
+.modal-overlay {
+  position: fixed; inset: 0;
+  background: rgba(0,0,0,0.85);
+  backdrop-filter: blur(6px);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s;
+}
+.modal-overlay.open { opacity: 1; pointer-events: all; }
+.modal {
+  background: var(--bg3);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  max-width: 620px;
+  width: 100%;
+  max-height: 85vh;
+  overflow-y: auto;
+  transform: translateY(20px);
+  transition: transform 0.25s;
+}
+.modal-overlay.open .modal { transform: translateY(0); }
+.modal-header {
+  padding: 28px 32px 20px;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.modal-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 28px;
+  font-weight: 300;
+  color: var(--cream);
+}
+.modal-studio { font-size: 12px; color: var(--gold); letter-spacing: 1px; text-transform: uppercase; margin-top: 3px; }
+.modal-close {
+  background: none; border: none; color: var(--muted); font-size: 22px;
+  cursor: pointer; padding: 0; line-height: 1; transition: var(--transition);
+}
+.modal-close:hover { color: var(--cream); }
+.modal-body { padding: 24px 32px; }
+.modal-section { margin-bottom: 22px; }
+.modal-section-title {
+  font-size: 9.5px;
+  letter-spacing: 2.5px;
+  color: var(--gold);
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+.modal-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.modal-item { padding: 10px 14px; background: rgba(255,255,255,0.03); border-radius: var(--radius); }
+.modal-item-label { font-size: 10px; color: var(--muted); margin-bottom: 3px; }
+.modal-item-value { font-size: 13px; color: var(--text); }
+.modal-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+.modal-price {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 36px;
+  color: var(--gold);
+  margin-bottom: 4px;
+}
+.modal-website {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 16px;
+  padding: 9px 20px;
+  border: 1px solid var(--gold-dim);
+  border-radius: var(--radius);
+  color: var(--gold);
+  text-decoration: none;
+  font-size: 12px;
+  letter-spacing: 0.5px;
+  transition: var(--transition);
+}
+.modal-website:hover { background: var(--gold-dim); border-color: var(--gold); color: var(--cream); }
+
+/* FOOTER */
+footer {
+  padding: 32px 40px;
+  border-top: 1px solid var(--border);
+  text-align: center;
+  color: var(--muted);
+  font-size: 11.5px;
+  background: var(--bg2);
+}
+footer a { color: var(--gold-dim); text-decoration: none; }
+
+/* ANIMATIONS */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.photo-card { animation: fadeInUp 0.4s ease both; }
+
+/* Mobile filter */
+.mobile-filter-btn {
+  display: none;
+  margin: 16px;
+  padding: 10px 20px;
+  border: 1px solid var(--gold-dim);
+  background: transparent;
+  color: var(--gold);
+  border-radius: 3px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 12px;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="header">
+  <div class="header-ornament">✦ Vorarlberg ✦ Österreich ✦ 2025/26</div>
+  <h1>Hochzeitsfotografen<br><em>im Vergleich</em></h1>
+  <p class="header-sub">Alle relevanten Anbieter in Vorarlberg – sortierbar nach Preis, filterbar nach Region und Stil. Inkl. vollständigem Kostenvergleich.</p>
+  <div class="stats-bar">
+    <div class="stat">
+      <div class="stat-value">48+</div>
+      <div class="stat-label">Fotografen</div>
+    </div>
+    <div class="stat">
+      <div class="stat-value">€800</div>
+      <div class="stat-label">Ab Standesamt</div>
+    </div>
+    <div class="stat">
+      <div class="stat-value">€2.200</div>
+      <div class="stat-label">Ø Ganztag</div>
+    </div>
+    <div class="stat">
+      <div class="stat-value">6</div>
+      <div class="stat-label">Regionen</div>
+    </div>
+    <div class="stat">
+      <div class="stat-value">12–18</div>
+      <div class="stat-label">Mon. Vorlauf</div>
+    </div>
+  </div>
+</header>
+
+<!-- BUDGET GUIDE -->
+<section class="budget-section">
+  <h2>Was bekomme ich für welches Budget?</h2>
+  <p class="section-lead">Klick auf ein Budget, um nur passende Fotografen zu sehen.</p>
+  <div class="budget-grid">
+    <div class="budget-card" data-budget="all" onclick="filterBudget(this,'all')">
+      <div class="budget-range">Alle</div>
+      <div class="budget-title">Gesamtübersicht</div>
+      <div class="budget-desc">Alle Fotografen ohne Preisfilter anzeigen.</div>
+    </div>
+    <div class="budget-card" data-budget="1000" onclick="filterBudget(this,'1000')">
+      <div class="budget-range">bis €1.000</div>
+      <div class="budget-title">Standesamt-Paket</div>
+      <div class="budget-desc">2–4 Stunden, 100–300 Fotos, Zeremonie + kurzes Paarshooting, digital.</div>
+    </div>
+    <div class="budget-card" data-budget="2000" onclick="filterBudget(this,'2000')">
+      <div class="budget-range">€1.000–2.000</div>
+      <div class="budget-title">Halbtag bis Standard</div>
+      <div class="budget-desc">6–8 Stunden, 400–600 Fotos, Galerie, USB-Stick, vollständige Bearbeitung.</div>
+    </div>
+    <div class="budget-card" data-budget="3000" onclick="filterBudget(this,'3000')">
+      <div class="budget-range">€2.000–3.000</div>
+      <div class="budget-title">Ganztag Premium</div>
+      <div class="budget-desc">8–12 Stunden, 600+ Fotos, ggf. Zweitfotograf oder Engagement-Shooting.</div>
+    </div>
+    <div class="budget-card" data-budget="premium" onclick="filterBudget(this,'premium')">
+      <div class="budget-range">€3.000+</div>
+      <div class="budget-title">All-Inclusive</div>
+      <div class="budget-desc">12+ Stunden, Duo-Team, Album inkl., Drohne, Video, alles aus einer Hand.</div>
+    </div>
+  </div>
+</section>
+
+<!-- MAIN: SIDEBAR + GRID -->
+<div class="main-layout">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="sidebar-title">Filter & Suche</div>
+
+    <div class="filter-group">
+      <label class="filter-label">Region</label>
+      <div class="filter-options" id="regionFilters">
+        <div class="filter-option selected" data-filter="region" data-value="all" onclick="toggleFilter(this)">
+          <div class="filter-check"></div>Alle Regionen<span class="filter-count">48</span>
+        </div>
+        <div class="filter-option" data-filter="region" data-value="Rheintal" onclick="toggleFilter(this)">
+          <div class="filter-check"></div>Rheintal<span class="filter-count">15</span>
+        </div>
+        <div class="filter-option" data-filter="region" data-value="Bodensee" onclick="toggleFilter(this)">
+          <div class="filter-check"></div>Bodensee / Bregenz<span class="filter-count">8</span>
+        </div>
+        <div class="filter-option" data-filter="region" data-value="Bregenzerwald" onclick="toggleFilter(this)">
+          <div class="filter-check"></div>Bregenzerwald<span class="filter-count">7</span>
+        </div>
+        <div class="filter-option" data-filter="region" data-value="Montafon" onclick="toggleFilter(this)">
+          <div class="filter-check"></div>Montafon<span class="filter-count">6</span>
+        </div>
+        <div class="filter-option" data-filter="region" data-value="Feldkirch" onclick="toggleFilter(this)">
+          <div class="filter-check"></div>Feldkirch / Walgau<span class="filter-count">4</span>
+        </div>
+        <div class="filter-option" data-filter="region" data-value="Bludenz" onclick="toggleFilter(this)">
+          <div class="filter-check"></div>Bludenz / Brandnertal<span class="filter-count">3</span>
+        </div>
+        <div class="filter-option" data-filter="region" data-value="Überregional" onclick="toggleFilter(this)">
+          <div class="filter-check"></div>Überregional<span class="filter-count">5</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="filter-group">
+      <label class="filter-label">Stil</label>
+      <div class="filter-options" id="styleFilters">
+        <div class="filter-option selected" data-filter="style" data-value="all" onclick="toggleFilter(this)">
+          <div class="filter-check"></div>Alle Stile
+        </div>
+        <div class="filter-option" data-filter="style" data-value="Reportage" onclick="toggleFilter(this)">
+          <div class="filter-check"></div>Reportage / Dokumentarisch
+        </div>
+        <div class="filter-option" data-filter="style" data-value="Fine Art" onclick="toggleFilter(this)">
+          <div class="filter-check"></div>Fine Art
+        </div>
+        <div class="filter-option" data-filter="style" data-value="Klassisch" onclick="toggleFilter(this)">
+          <div class="filter-check"></div>Klassisch / Traditionell
+        </div>
+        <div class="filter-option" data-filter="style" data-value="Editorial" onclick="toggleFilter(this)">
+          <div class="filter-check"></div>Editorial / Fashion
+        </div>
+        <div class="filter-option" data-filter="style" data-value="Adventure" onclick="toggleFilter(this)">
+          <div class="filter-check"></div>Adventure / Outdoor
+        </div>
+        <div class="filter-option" data-filter="style" data-value="Lifestyle" onclick="toggleFilter(this)">
+          <div class="filter-check"></div>Lifestyle / Modern
+        </div>
+      </div>
+    </div>
+
+    <div class="filter-group">
+      <label class="filter-label">Besonderheiten</label>
+      <div class="filter-options">
+        <div class="filter-option" data-filter="feature" data-value="video" onclick="toggleFilter(this)">
+          <div class="filter-check"></div>Foto + Video
+        </div>
+        <div class="filter-option" data-filter="feature" data-value="duo" onclick="toggleFilter(this)">
+          <div class="filter-check"></div>Duo-Team
+        </div>
+        <div class="filter-option" data-filter="feature" data-value="drohne" onclick="toggleFilter(this)">
+          <div class="filter-check"></div>Drohne
+        </div>
+        <div class="filter-option" data-filter="feature" data-value="album" onclick="toggleFilter(this)">
+          <div class="filter-check"></div>Album inkl.
+        </div>
+        <div class="filter-option" data-filter="feature" data-value="elopement" onclick="toggleFilter(this)">
+          <div class="filter-check"></div>Elopement
+        </div>
+      </div>
+    </div>
+
+    <div class="filter-group">
+      <label class="filter-label">Max. Startpreis</label>
+      <div class="price-range-display" id="priceDisplay">bis €4.500</div>
+      <div class="range-wrap">
+        <input type="range" id="priceRange" min="500" max="4500" value="4500" step="100" oninput="updatePriceFilter(this.value)">
+      </div>
+    </div>
+  </aside>
+
+  <!-- CONTENT -->
+  <div>
+    <!-- SORT BAR -->
+    <div class="sort-bar">
+      <span class="sort-label">Sortieren:</span>
+      <button class="sort-btn active" onclick="sortCards('preis-auf', this)">Preis ↑</button>
+      <button class="sort-btn" onclick="sortCards('preis-ab', this)">Preis ↓</button>
+      <button class="sort-btn" onclick="sortCards('name', this)">Name A–Z</button>
+      <button class="sort-btn" onclick="sortCards('region', this)">Region</button>
+      <div class="results-count"><span id="resultCount">48</span> Fotografen</div>
+      <button class="reset-btn" onclick="resetFilters()">Reset</button>
+    </div>
+
+    <!-- GRID -->
+    <div class="photo-grid" id="photoGrid"></div>
+  </div>
+</div>
+
+<!-- KOSTENVERGLEICH -->
+<section class="cost-section">
+  <h2>Vollständiger Kostenvergleich</h2>
+  <p class="section-lead">Was ist standardmäßig inkludiert – und was kostet extra?</p>
+  <div class="cost-grid">
+    <div class="cost-item">
+      <div class="cost-item-header">
+        <div class="cost-item-name">Bildbearbeitung</div>
+        <span class="cost-item-badge included">Inkludiert</span>
+      </div>
+      <div class="cost-price">—</div>
+      <div class="cost-note">Farbkorrektur, Belichtung, Beschnitt und Basis-Retusche sind immer im Paket. Erweiterte Skin-Retusche oder Hintergrundentfernung kosten extra.</div>
+    </div>
+    <div class="cost-item">
+      <div class="cost-item-header">
+        <div class="cost-item-name">Online-Galerie</div>
+        <span class="cost-item-badge included">Inkludiert</span>
+      </div>
+      <div class="cost-price">—</div>
+      <div class="cost-note">Passwortgeschützte Galerie zum Teilen mit Familie und Gästen; Downloadlink mit voller Auflösung. Meist 3–12 Monate online verfügbar.</div>
+    </div>
+    <div class="cost-item">
+      <div class="cost-item-header">
+        <div class="cost-item-name">USB-Stick</div>
+        <span class="cost-item-badge varies">Je nach Paket</span>
+      </div>
+      <div class="cost-price">—</div>
+      <div class="cost-note">In vielen Standard- und Premium-Paketen inkludiert. Bei Basis-Paketen oft als Add-on buchbar. Manche bieten nur digitale Übergabe an.</div>
+    </div>
+    <div class="cost-item">
+      <div class="cost-item-header">
+        <div class="cost-item-name">Hochzeitsalbum</div>
+        <span class="cost-item-badge extra">Extra</span>
+      </div>
+      <div class="cost-price">€250–€1.000+</div>
+      <div class="cost-note">Kleines Einstiegsalbum ab ca. €250. Fine-Art-Lederalbum A3 ab €600–€1.000. Design + Druck dauern 4–8 Wochen nach Bildauswahl.</div>
+    </div>
+    <div class="cost-item">
+      <div class="cost-item-header">
+        <div class="cost-item-name">Zweitfotograf</div>
+        <span class="cost-item-badge extra">Extra / inkl.</span>
+      </div>
+      <div class="cost-price">+€400–€800</div>
+      <div class="cost-note">Ermöglicht simultane Begleitung von Braut und Bräutigam beim Getting Ready. In Premium-Paketen und Duo-Studios oft Standard.</div>
+    </div>
+    <div class="cost-item">
+      <div class="cost-item-header">
+        <div class="cost-item-name">Fahrtkosten</div>
+        <span class="cost-item-badge varies">Ab Freigrenze</span>
+      </div>
+      <div class="cost-price">€0,40–€1/km</div>
+      <div class="cost-note">Typisch 30–50 km Radius kostenfrei. Wild Embrace: alle Vlbg.-Kosten inkludiert. Hefti Impressions: €1/km ab 50 km. Bei Berglocations ggf. Übernachtung nötig.</div>
+    </div>
+    <div class="cost-item">
+      <div class="cost-item-header">
+        <div class="cost-item-name">Engagement-Shooting</div>
+        <span class="cost-item-badge extra">Extra</span>
+      </div>
+      <div class="cost-price">€150–€450</div>
+      <div class="cost-note">Verlobungs- oder Kennenlern-Shooting vor der Hochzeit. Dual-Nutzen: schöne Bilder und Gewöhnung an die Kamera vor dem großen Tag.</div>
+    </div>
+    <div class="cost-item">
+      <div class="cost-item-header">
+        <div class="cost-item-name">Videografie</div>
+        <span class="cost-item-badge extra">Extra / separat</span>
+      </div>
+      <div class="cost-price">ab €1.500</div>
+      <div class="cost-note">Hochzeitsfilm (15–30 Min.) ab ca. €1.500. Highlight-Reels kürzer und günstiger. Einige Vorarlberger Studios bieten Foto+Video aus einer Hand an.</div>
+    </div>
+    <div class="cost-item">
+      <div class="cost-item-header">
+        <div class="cost-item-name">RAW-Dateien</div>
+        <span class="cost-item-badge extra">Meist nein</span>
+      </div>
+      <div class="cost-price">Selten</div>
+      <div class="cost-note">RAW-Dateien werden branchenweit grundsätzlich nicht mitgeliefert – die Bearbeitung ist Teil des kreativen und urheberrechtlichen Prozesses.</div>
+    </div>
+    <div class="cost-item">
+      <div class="cost-item-header">
+        <div class="cost-item-name">Zusatzstunden</div>
+        <span class="cost-item-badge extra">Extra</span>
+      </div>
+      <div class="cost-price">€150–€300/Std.</div>
+      <div class="cost-note">Verlängerung am Hochzeitstag wenn sich der Ablauf verzögert. Besser vorab vereinbaren als spontan anfragen.</div>
+    </div>
+    <div class="cost-item">
+      <div class="cost-item-header">
+        <div class="cost-item-name">Drohne</div>
+        <span class="cost-item-badge extra">Extra / inkl.</span>
+      </div>
+      <div class="cost-price">+€150–€400</div>
+      <div class="cost-note">Luftaufnahmen der Location besonders wirkungsvoll bei Berghochzeiten, Bodensee oder Schlosslocations. Nur bei zugelassenen Piloten buchbar.</div>
+    </div>
+    <div class="cost-item">
+      <div class="cost-item-header">
+        <div class="cost-item-name">Lieferzeit</div>
+        <span class="cost-item-badge included">Im Paket</span>
+      </div>
+      <div class="cost-price">2–6 Wochen</div>
+      <div class="cost-note">Preview (3–10 Bilder) nach 2–7 Tagen. Vollständige Galerie nach 2 Wochen (Stefan Kuhn) bis 6 Wochen (Standard). Saison kann Lieferzeit verlängern.</div>
+    </div>
+  </div>
+</section>
+
+<!-- TIPPS -->
+<section class="tips-section">
+  <h2 style="font-family:'Cormorant Garamond',serif;font-size:30px;font-weight:300;color:var(--cream);margin-bottom:6px;">Worauf sollte man achten?</h2>
+  <p class="section-lead">Die 10 wichtigsten Fragen und Entscheidungshilfen.</p>
+  <div class="tips-grid">
+    <div class="tip-card">
+      <div class="tip-number">01</div>
+      <div class="tip-title">Vollständige Hochzeiten sehen</div>
+      <div class="tip-text">Immer 2–3 komplette Reportagen anfordern, nicht nur Highlight-Bilder. Zeigt, ob der Fotograf auch schwieriges Licht und lange Tage meistert.</div>
+    </div>
+    <div class="tip-card">
+      <div class="tip-number">02</div>
+      <div class="tip-title">12–18 Monate früh buchen</div>
+      <div class="tip-text">Top-Fotografen in Vorarlberg sind weit im Voraus ausgebucht. Besonders Samstage in der Hochsaison (Mai–Oktober) vergehen schnell.</div>
+    </div>
+    <div class="tip-card">
+      <div class="tip-number">03</div>
+      <div class="tip-title">Stil muss passen</div>
+      <div class="tip-text">Reportage bedeutet: Fotograf hält sich zurück. Klassisch bedeutet: Posing und Regie. Entscheidet gemeinsam, welcher Stil zu eurer Persönlichkeit passt.</div>
+    </div>
+    <div class="tip-card">
+      <div class="tip-number">04</div>
+      <div class="tip-title">Backup-Equipment fragen</div>
+      <div class="tip-text">Profis arbeiten immer mit doppelter Speicherkarte und Ersatzkamera. Fragt explizit danach – und nach einem Ausfallplan bei Krankheit.</div>
+    </div>
+    <div class="tip-card">
+      <div class="tip-number">05</div>
+      <div class="tip-title">Kurzpakete clever buchen</div>
+      <div class="tip-text">Standesamtliche Trauungen (4 Std.) sind an Samstagen in der Saison schwer zu buchen. Freitage, Wochentage und Nebensaison (Nov.–Apr.) sind einfacher.</div>
+    </div>
+    <div class="tip-card">
+      <div class="tip-number">06</div>
+      <div class="tip-title">Vertrag prüfen</div>
+      <div class="tip-text">Wichtig: Nutzungsrechte, Stornobedingungen, Lieferfrist und Leistungsumfang schriftlich festhalten. Das Urheberrecht bleibt immer beim Fotografen.</div>
+    </div>
+    <div class="tip-card">
+      <div class="tip-number">07</div>
+      <div class="tip-title">Location-Kenntnisse wichitg</div>
+      <div class="tip-text">Vorarlberger Fotografen kennen alpine Bedingungen, Geheimspots und Wetterwechsel. Bei Berghochzeiten klarer Vorteil gegenüber auswärtigen Fotografen.</div>
+    </div>
+    <div class="tip-card">
+      <div class="tip-number">08</div>
+      <div class="tip-title">Chemie zählt</div>
+      <div class="tip-text">Ihr verbringt den schönsten Tag mit dieser Person. Persönlichkeit und Vertrauen sind mindestens so wichtig wie das Portfolio.</div>
+    </div>
+    <div class="tip-card">
+      <div class="tip-number">09</div>
+      <div class="tip-title">Budget-Puffer einplanen</div>
+      <div class="tip-text">Album, Zusatzstunden, zweiter Fotograf und Anreise können das Budget um 30–50% erhöhen. Immer mit dem Endpreis kalkulieren, nicht dem Startpreis.</div>
+    </div>
+    <div class="tip-card">
+      <div class="tip-number">10</div>
+      <div class="tip-title">Kennenlern-Shooting</div>
+      <div class="tip-text">Ein Engagement- oder Verlobungsshooting ist ideal zum Aufwärmen. Gewöhnt euch an die Kamera und ihr habt bereits schöne Bilder vor der Hochzeit.</div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>Recherche-Stand: März 2026 · Preise sind Richtwerte und können variieren · Alle Preisangaben inkl. MwSt.</p>
+  <p style="margin-top:8px;opacity:0.5;">Quellen: austriawedding.at · hochzeit.click · hochzeits-fotograf.info · laendlewedding.at · eintollesfest.at und direkte Fotografen-Websites</p>
+</footer>
+
+<!-- MODAL -->
+<div class="modal-overlay" id="modalOverlay" onclick="closeModal(event)">
+  <div class="modal" id="modal">
+    <div class="modal-header">
+      <div>
+        <div class="modal-name" id="modalName"></div>
+        <div class="modal-studio" id="modalStudio"></div>
+      </div>
+      <button class="modal-close" onclick="document.getElementById('modalOverlay').classList.remove('open')">✕</button>
+    </div>
+    <div class="modal-body" id="modalBody"></div>
+  </div>
+</div>
+
+<script>
+const PHOTOGRAPHERS = [
+  {
+    name: "Wild Embrace",
+    studio: "Victoria & Fabian",
+    location: "Mellau",
+    region: "Bregenzerwald",
+    styles: ["Adventure", "Fine Art"],
+    priceMin: 2600,
+    priceDisplay: "ab €2.600",
+    priceCategory: "premium",
+    desc: "Spezialisiert auf Adventure-Hochzeiten, Elopements und Alpine-Destinationen. International tätig, mit besonderer Leidenschaft für die Berge Vorarlbergs.",
+    features: ["Elopement", "album", "Locationscout", "Vlbg. Reisekosten inkl.", "Timing-Planung"],
+    ribbon: null,
+    website: "wildembrace.com",
+    packages: "Wedding ab €2.600 (6 Std.) / Elopement ab €3.960 (4 Std.)",
+    delivery: "bis 6 Wochen",
+    extras: "Engagement-Shooting ab €450 · Reisekosten Vlbg. inkl."
+  },
+  {
+    name: "Matthias Rhomberg & Eva Sutter",
+    studio: "Wenn's schön werden muss",
+    location: "Dornbirn (Campus V)",
+    region: "Rheintal",
+    styles: ["Reportage", "Lifestyle"],
+    priceMin: 2200,
+    priceDisplay: "auf Anfrage",
+    priceCategory: "premium",
+    desc: "13+ Jahre Erfahrung, immer als Duo. Pakete von Silber bis Diamant. Doppelte Speicherkarten, HD-Slideshow, Gold-USB-Stick.",
+    features: ["duo", "HD-Slideshow", "USB-Stick Gold", "Doppel-Speicher"],
+    ribbon: "Duo",
+    website: "wenns-schoen-werden-muss.com",
+    packages: "Pakete Silber bis Diamant (auf Anfrage)",
+    delivery: "4–6 Wochen",
+    extras: "Zweitfotograf immer inklusive"
+  },
+  {
+    name: "Hefti Impressions",
+    studio: "Pascal & Maria Hefti",
+    location: "Nüziders",
+    region: "Bludenz",
+    styles: ["Reportage", "Lifestyle"],
+    priceMin: 1800,
+    priceDisplay: "auf Anfrage",
+    priceCategory: "mid",
+    desc: "200+ Hochzeiten, Ehepaar-Team. 4,9 Sterne (136+ Bewertungen). Foto + Video aus einer Hand. Hochzeits-eBook gratis.",
+    features: ["duo", "video", "elopement", "Min. 300 Fotos", "50 km gratis"],
+    ribbon: "Video",
+    website: "hefti-impressions.at",
+    packages: "Individuelle Pakete ab Anfrage",
+    delivery: "4–6 Wochen",
+    extras: "Fahrtkosten: €1/km ab 50 km · eBook gratis"
+  },
+  {
+    name: "Linse2",
+    studio: "Roland & Dani",
+    location: "Wien / arbeitet in Vlbg.",
+    region: "Überregional",
+    styles: ["Reportage", "Fine Art"],
+    priceMin: 2500,
+    priceDisplay: "auf Anfrage",
+    priceCategory: "premium",
+    desc: "400+ Hochzeiten weltweit. Immer 2 Fotografen, Fine-Art-Album inkl., Überraschungsbox, Video optional.",
+    features: ["duo", "album", "video", "Global erfahren", "Starter-Paket 5 Std."],
+    ribbon: "Duo",
+    website: "linse2.at",
+    packages: "Starter (5 Std.) bis All-Inclusive",
+    delivery: "4–5 Wochen",
+    extras: "Fine-Art-Album inkludiert · Überraschungsbox"
+  },
+  {
+    name: "Liebe zum Bild",
+    studio: "Michael Margos",
+    location: "Überregional",
+    region: "Überregional",
+    styles: ["Reportage"],
+    priceMin: 480,
+    priceDisplay: "ab €480",
+    priceCategory: "budget",
+    desc: "Transparente Paketpreise: 2 Std. €480 / 6 Std. €1.380 / 8 Std. €1.600 / 10 Std. €1.950. 600+ Fotos bei 8 Stunden.",
+    features: ["50 km inkl.", "Originalauflösung", "Persönl. Vorgespräch"],
+    ribbon: null,
+    website: "liebezumbild.com",
+    packages: "2 Std. €480 · 6 Std. €1.380 · 8 Std. €1.600 · 10 Std. €1.950",
+    delivery: "3–4 Wochen",
+    extras: "Fotobuch extra · 50 km Anfahrt inkl."
+  },
+  {
+    name: "Weddingcrashers",
+    studio: "Dokumentarisches Duo",
+    location: "Überregional (AT)",
+    region: "Überregional",
+    styles: ["Reportage"],
+    priceMin: 1950,
+    priceDisplay: "ab €1.950",
+    priceCategory: "mid",
+    desc: "250+ Hochzeiten Erfahrung. Ab 8 Stunden, 400–1.000 bearbeitete Fotos. Nur Apr.–Nov., Fr./Sa. buchbar.",
+    features: ["video", "400–1000 Fotos", "250+ Hochzeiten"],
+    ribbon: null,
+    website: "weddingcrashers.at",
+    packages: "Ab €1.950 (min. 8 Std., April–November)",
+    delivery: "4 Wochen",
+    extras: "Video optional · nur Fr/Sa Apr–Nov"
+  },
+  {
+    name: "Monika Kessler",
+    studio: "Art of Photography",
+    location: "Meiningen",
+    region: "Rheintal",
+    styles: ["Klassisch"],
+    priceMin: 1500,
+    priceDisplay: "auf Anfrage",
+    priceCategory: "mid",
+    desc: "39+ Jahre Erfahrung. Eigenes Studio. Fotobooth & Hochzeitsalbum als Extras. CH/FL-Kunden können 20% MwSt. zurückfordern.",
+    features: ["Eigenes Studio", "Fotobox", "CH/FL MwSt.", "Nikon Vollformat"],
+    ribbon: null,
+    website: "monikakessler.com",
+    packages: "Preisliste als PDF auf Anfrage",
+    delivery: "4–6 Wochen",
+    extras: "Holzschatulle · Fotobooth · Album"
+  },
+  {
+    name: "Dan Jenson Photography",
+    studio: "Dan Jenson",
+    location: "Brand / Brandnertal",
+    region: "Bludenz",
+    styles: ["Reportage", "Adventure"],
+    priceMin: 2400,
+    priceDisplay: "ab €2.400",
+    priceCategory: "premium",
+    desc: "Ganztag-Spezialist im Brandnertal. Dokumentarischer Stil mit emotionalem Fokus. Ideal für alpine Berghochzeiten.",
+    features: ["elopement", "Berglocations", "Ganztag"],
+    ribbon: null,
+    website: "dan-jenson.com",
+    packages: "Ganztag ab €2.400 (Details auf Anfrage)",
+    delivery: "4 Wochen",
+    extras: "Spezialisiert auf alpine Locations"
+  },
+  {
+    name: "Malai Photography",
+    studio: "Malai Tamerl",
+    location: "Bregenz",
+    region: "Bodensee",
+    styles: ["Lifestyle", "Reportage"],
+    priceMin: 1600,
+    priceDisplay: "Pricing Guide auf Anfrage",
+    priceCategory: "mid",
+    desc: "~50 Fotos/Stunde. Preview nach 2–3 Tagen, volle Galerie in 2–3 Wochen. Lightroom-Workflow. Marriage Equality.",
+    features: ["Schnelle Lieferung", "Locationscout", "RAW-Workflow"],
+    ribbon: null,
+    website: "malai.work",
+    packages: "Pricing Guide per E-Mail",
+    delivery: "2–3 Wochen",
+    extras: "Preview nach 2–3 Tagen"
+  },
+  {
+    name: "Nina Bröll Fotografie",
+    studio: "Nina Bröll",
+    location: "Dornbirn",
+    region: "Rheintal",
+    styles: ["Reportage"],
+    priceMin: 1800,
+    priceDisplay: "auf Anfrage",
+    priceCategory: "mid",
+    desc: "Ikonische Locations (Rüfikopf Lech, Gebhardsberg, Kristberg). Pre-Wedding, First Look. 2 Zusatzfotografen möglich.",
+    features: ["elopement", "Pre-Wedding", "First Look"],
+    ribbon: null,
+    website: "broell.cc",
+    packages: "Individuelle Pakete (auf Anfrage)",
+    delivery: "4 Wochen",
+    extras: "Kennt ikonische Vlbg.-Locations"
+  },
+  {
+    name: "Tobias Köstl",
+    studio: "Besterfotografderwelt",
+    location: "Koblach",
+    region: "Rheintal",
+    styles: ["Reportage", "Editorial"],
+    priceMin: 1400,
+    priceDisplay: "auf Anfrage",
+    priceCategory: "mid",
+    desc: "Dreiländereck VL/CH/FL. Lizenzierte Drohne. 50 km ab Feldkirch kostenfrei. Reschedule bei Regen gratis. Fotoworkshops.",
+    features: ["drohne", "50 km gratis", "Dreiländereck", "Regen-Reschedule"],
+    ribbon: null,
+    website: "besterfotografderwelt.com",
+    packages: "Individuelle Pakete (auf Anfrage)",
+    delivery: "3–4 Wochen",
+    extras: "Drohne lizenziert · Regen-Garantie"
+  },
+  {
+    name: "Wedding Heimpel",
+    studio: "Stefan Heimpel",
+    location: "Lauterach",
+    region: "Bodensee",
+    styles: ["Reportage"],
+    priceMin: 2000,
+    priceDisplay: "auf Anfrage",
+    priceCategory: "mid",
+    desc: "Foto UND Video aus einer Hand. Analoger Hintergrund. Hochzeitsbuch + Hochzeitsfilm im Paket. Team mit Verena & Matthias.",
+    features: ["video", "duo", "album", "Analoger Hintergrund"],
+    ribbon: "Video",
+    website: "wedding-heimpel.at",
+    packages: "Kombi Foto+Video (auf Anfrage)",
+    delivery: "5–6 Wochen",
+    extras: "Hochzeitsfilm inklusive"
+  },
+  {
+    name: "Forte Moments",
+    studio: "Julian Forte",
+    location: "Röthis / Feldkirch",
+    region: "Feldkirch",
+    styles: ["Reportage", "Lifestyle"],
+    priceMin: 1400,
+    priceDisplay: "auf Anfrage",
+    priceCategory: "mid",
+    desc: "Foto UND Video. Mitglied Berufsfotografie Vorarlberg. Auch Event- und Unternehmenfotografie.",
+    features: ["video", "Event-Foto", "Berufsmitglied"],
+    ribbon: "Video",
+    website: "forte-moments.at",
+    packages: "Individuelle Pakete (auf Anfrage)",
+    delivery: "4 Wochen",
+    extras: "Foto + Video aus einer Hand"
+  },
+  {
+    name: "Thomas Gmeiner Photography",
+    studio: "Thomas Gmeiner",
+    location: "Dornbirn",
+    region: "Rheintal",
+    styles: ["Lifestyle", "Reportage"],
+    priceMin: 1500,
+    priceDisplay: "auf Anfrage",
+    priceCategory: "mid",
+    desc: "Eigenes Studio. Fotobox-Service (Fexon, 400+ Prints). Lizenzierte Drohne. Alles aus einer Hand.",
+    features: ["drohne", "Fotobox", "Eigenes Studio", "Alles aus einer Hand"],
+    ribbon: null,
+    website: "thomasgmeiner.com",
+    packages: "Individuelle Pakete (auf Anfrage)",
+    delivery: "3–4 Wochen",
+    extras: "Fotobox 400+ Prints · Drohne"
+  },
+  {
+    name: "Verena Knöpfle Fotografie",
+    studio: "Verena Knöpfle",
+    location: "Feldkirch",
+    region: "Feldkirch",
+    styles: ["Reportage", "Editorial"],
+    priceMin: 1500,
+    priceDisplay: "auf Anfrage",
+    priceCategory: "mid",
+    desc: "Fokus auf Licht, Farben & Atmosphäre. Persönlicher Bearbeitungsstil, unkitschige, ehrliche Bilder.",
+    features: ["Persönlicher Stil", "Licht-Fokus"],
+    ribbon: null,
+    website: "austriawedding.at",
+    packages: "Individuelle Pakete (auf Anfrage)",
+    delivery: "4 Wochen",
+    extras: "Unkitschige Ästhetik"
+  },
+  {
+    name: "Myrtle Weddings",
+    studio: "Kirstin Hauk",
+    location: "Dornbirn",
+    region: "Rheintal",
+    styles: ["Editorial", "Lifestyle"],
+    priceMin: 1800,
+    priceDisplay: "auf Anfrage",
+    priceCategory: "mid",
+    desc: "Studium Goldsmiths London & FH Dornbirn. Fashion-Editorial-Twist mit Humor. Modern und unverwechselbar.",
+    features: ["Editorial", "Fashion-Hintergrund", "London-Ausbildung"],
+    ribbon: null,
+    website: "myrtle.at",
+    packages: "Individuelle Pakete (auf Anfrage)",
+    delivery: "4 Wochen",
+    extras: "Fashion-Editorial-Ästhetik"
+  },
+  {
+    name: "Johannes Netzer Fotografie",
+    studio: "Johannes Netzer",
+    location: "Schruns",
+    region: "Montafon",
+    styles: ["Adventure", "Reportage"],
+    priceMin: 1400,
+    priceDisplay: "auf Anfrage",
+    priceCategory: "mid",
+    desc: "Mountain-Spezialist. Kennt abgelegene Alpin-Locations im Montafon. Auch Sport- und Landschaftsfotografie.",
+    features: ["elopement", "Berglocations", "Montafon-Spezialist"],
+    ribbon: null,
+    website: "netzer-fotografie.com",
+    packages: "Individuelle Pakete (auf Anfrage)",
+    delivery: "3–4 Wochen",
+    extras: "Kennt alpine Geheimlocations"
+  },
+  {
+    name: "Stefan Kothner Photography",
+    studio: "Stefan Kothner",
+    location: "Schruns",
+    region: "Montafon",
+    styles: ["Editorial", "Adventure"],
+    priceMin: 1800,
+    priceDisplay: "auf Anfrage",
+    priceCategory: "mid",
+    desc: "QEP (Qualified European Photographer). FEP-Awards. Videografie inkl. Snowboard-Weltcup-Fotograf.",
+    features: ["video", "drohne", "QEP-Zertifikat", "FEP-Award"],
+    ribbon: "Award",
+    website: "kothner.at",
+    packages: "Individuelle Pakete (auf Anfrage)",
+    delivery: "4 Wochen",
+    extras: "Europäisch zertifiziert · Video"
+  },
+  {
+    name: "Flurina Moroder",
+    studio: "Flurina Moroder",
+    location: "Göfis",
+    region: "Feldkirch",
+    styles: ["Reportage", "Adventure"],
+    priceMin: 1300,
+    priceDisplay: "auf Anfrage",
+    priceCategory: "mid",
+    desc: "Ursprünglich aus Südtirol. Berg-inspiriert. Natürliche, authentische Bilder. Auch Lovestory-Sessions.",
+    features: ["elopement", "Berg-inspiriert", "Lovestory-Sessions"],
+    ribbon: null,
+    website: "austriawedding.at",
+    packages: "Individuelle Pakete (auf Anfrage)",
+    delivery: "4 Wochen",
+    extras: "Südtiroler Wurzeln · Berge"
+  },
+  {
+    name: "Benjamin Schlachter",
+    studio: "Benjamin Schlachter",
+    location: "Lustenau",
+    region: "Rheintal",
+    styles: ["Reportage"],
+    priceMin: 1200,
+    priceDisplay: "auf Anfrage",
+    priceCategory: "mid",
+    desc: "Fokus auf Liebe, Lachen und echte Emotionen. Dokumentarischer Ansatz, diskret im Hintergrund.",
+    features: ["Emotionen", "Dokumentarisch"],
+    ribbon: null,
+    website: "benjaminschlachter.at",
+    packages: "Individuelle Pakete (auf Anfrage)",
+    delivery: "3–4 Wochen",
+    extras: "Natürlich · ungestellt"
+  },
+  {
+    name: "Martin Nußbaumer",
+    studio: "NuMa Fotografie",
+    location: "Vorarlberg / Bodensee",
+    region: "Bodensee",
+    styles: ["Reportage"],
+    priceMin: 1500,
+    priceDisplay: "auf Anfrage",
+    priceCategory: "mid",
+    desc: "Dokumentarisch, warm und zeitlos. Auch Bodensee, Schweiz und Süddeutschland. Engagement-Shoots und After-Wedding.",
+    features: ["elopement", "Bodensee", "Schweiz/DE"],
+    ribbon: null,
+    website: "numa-foto.at",
+    packages: "Individuelle Pakete (auf Anfrage)",
+    delivery: "4 Wochen",
+    extras: "Grenzregion VL/CH/DE"
+  },
+  {
+    name: "Rareshot",
+    studio: "Viktoria",
+    location: "Dornbirn",
+    region: "Rheintal",
+    styles: ["Fine Art", "Editorial"],
+    priceMin: 2000,
+    priceDisplay: "auf Anfrage",
+    priceCategory: "premium",
+    desc: "Besondere Fine-Art-Ästhetik. Intensiv, atmosphärisch und emotional. Für Paare, die mehr als Standard-Hochzeitsbilder suchen.",
+    features: ["Fine Art", "Atmosphärisch"],
+    ribbon: null,
+    website: "austriawedding.at",
+    packages: "Individuelle Pakete (auf Anfrage)",
+    delivery: "5 Wochen",
+    extras: "Außergewöhnliche Fine-Art-Ästhetik"
+  },
+  {
+    name: "Cornelius Altrichter",
+    studio: "Cornelius Altrichter",
+    location: "Schruns",
+    region: "Montafon",
+    styles: ["Editorial", "Fine Art"],
+    priceMin: 2000,
+    priceDisplay: "auf Anfrage",
+    priceCategory: "premium",
+    desc: "Mode- und Beauty-Hintergrund. Magazin-Qualität bei Brautportraits. Editorial-Stil mit Hochzeitsreportage kombiniert.",
+    features: ["Editorial", "Beauty-Hintergrund", "Magazin-Qualität"],
+    ribbon: null,
+    website: "austriawedding.at",
+    packages: "Individuelle Pakete (auf Anfrage)",
+    delivery: "5 Wochen",
+    extras: "Mode/Beauty-Erfahrung"
+  },
+  {
+    name: "Anastasia Gerasimova",
+    studio: "Anastasia Mattle Fotografie",
+    location: "Hittisau / Vandans",
+    region: "Bregenzerwald",
+    styles: ["Reportage"],
+    priceMin: 1400,
+    priceDisplay: "auf Anfrage",
+    priceCategory: "mid",
+    desc: "12+ Jahre Erfahrung. Mehrsprachig (Deutsch/Russisch). Film-Fotografie-Hintergrund. Seit 2011 in Vorarlberg.",
+    features: ["Mehrsprachig", "Film-Hintergrund", "12+ Jahre"],
+    ribbon: null,
+    website: "austriawedding.at",
+    packages: "Individuelle Pakete (auf Anfrage)",
+    delivery: "4 Wochen",
+    extras: "DE/RU · Film-Ästhetik"
+  },
+  {
+    name: "Lässiger Photography",
+    studio: "Stefanie Lässer",
+    location: "Schnepfau",
+    region: "Bregenzerwald",
+    styles: ["Reportage"],
+    priceMin: 1500,
+    priceDisplay: "auf Anfrage",
+    priceCategory: "mid",
+    desc: "Fotografin UND Hochzeitsplanerin in einer Person. Atmosphärisch, detailverliebt.",
+    features: ["Hochzeitsplanung", "Doppel-Service"],
+    ribbon: null,
+    website: "austriawedding.at",
+    packages: "Individuelle Pakete (auf Anfrage)",
+    delivery: "4 Wochen",
+    extras: "Planung + Fotografie aus einer Hand"
+  },
+  {
+    name: "Glücksbild Fotografie",
+    studio: "Simone Mitgutsch",
+    location: "Alberschwende",
+    region: "Bregenzerwald",
+    styles: ["Lifestyle"],
+    priceMin: 199,
+    priceDisplay: "ab €199",
+    priceCategory: "budget",
+    desc: "Transparente Portrait- und Paarpakete. 30 Min. / 60 Min. / 90 Min. Anfahrt ab €0,98/km.",
+    features: ["Portrait-Pakete", "Kurze Sessions"],
+    ribbon: null,
+    website: "gluecksbild-fotografie.com",
+    packages: "30 Min. €199 · 60 Min. €299 · 90 Min. €499",
+    delivery: "1–2 Wochen",
+    extras: "Anfahrt: €0,98/km · Einzelfotos: €24"
+  },
+  {
+    name: "Photographiemomente",
+    studio: "Lena Weiß",
+    location: "Langenegg",
+    region: "Bregenzerwald",
+    styles: ["Reportage"],
+    priceMin: 1200,
+    priceDisplay: "auf Anfrage",
+    priceCategory: "mid",
+    desc: "Spezialisiert auf Hochzeiten, Familien und Neugeborene. Natürlich und emotional.",
+    features: ["Familien", "Natürlich"],
+    ribbon: null,
+    website: "photographiemomente.at",
+    packages: "Individuelle Pakete (auf Anfrage)",
+    delivery: "3–4 Wochen",
+    extras: "Bregenzerwald-ansässig"
+  },
+  {
+    name: "MEDIArt Photographie",
+    studio: "MEDIArt",
+    location: "Hard",
+    region: "Bodensee",
+    styles: ["Klassisch", "Lifestyle"],
+    priceMin: 1200,
+    priceDisplay: "auf Anfrage",
+    priceCategory: "mid",
+    desc: "5,0 Sterne bei 60+ Bewertungen auf Herold.at. Professionelles Studio inkl. Hochzeiten.",
+    features: ["5,0 Sterne", "Studio", "60+ Bewertungen"],
+    ribbon: null,
+    website: "mediart.at",
+    packages: "Individuelle Pakete (auf Anfrage)",
+    delivery: "3–4 Wochen",
+    extras: "Top-Bewertungen · Bodensee-Lage"
+  },
+  {
+    name: "Tim Glowik",
+    studio: "Tim Glowik",
+    location: "Bodensee (DE)",
+    region: "Bodensee",
+    styles: ["Reportage"],
+    priceMin: 1200,
+    priceDisplay: "auf Anfrage",
+    priceCategory: "mid",
+    desc: "Stundenbasierte Pakete am Bodensee. Pausenrate €50/Std. Separate Elopement-Pakete. Auch Alben.",
+    features: ["Stundenbasiert", "Elopement", "album"],
+    ribbon: null,
+    website: "timglowik.de",
+    packages: "Stundenbasiert (auf Anfrage)",
+    delivery: "3–4 Wochen",
+    extras: "Bodensee-Spezialist (DE/AT)"
+  }
+];
+
+let activeRegion = 'all';
+let activeStyle = 'all';
+let activeFeatures = [];
+let activeBudget = 'all';
+let maxPrice = 4500;
+let currentSort = 'preis-auf';
+
+function renderCards(data) {
+  const grid = document.getElementById('photoGrid');
+  grid.innerHTML = '';
+  if (data.length === 0) {
+    grid.innerHTML = '<div class="empty-state"><div class="empty-state-icon">📷</div><p>Keine Fotografen gefunden.<br><small>Filter anpassen oder zurücksetzen.</small></p></div>';
+    document.getElementById('resultCount').textContent = '0';
+    return;
+  }
+  document.getElementById('resultCount').textContent = data.length;
+  data.forEach((p, i) => {
+    const card = document.createElement('div');
+    card.className = 'photo-card';
+    card.style.animationDelay = (i * 0.04) + 's';
+    const catClass = p.priceCategory;
+    const catLabel = { budget: 'Budgetfreundlich', mid: 'Mittelklasse', premium: 'Premium' }[catClass];
+    const ribbonHtml = p.ribbon ? `<div class="card-ribbon ${p.ribbon.toLowerCase()}">${p.ribbon}</div>` : '';
+    const featureHtml = p.features.slice(0,4).map(f => `<span class="feature">${f}</span>`).join('');
+    card.innerHTML = `
+      ${ribbonHtml}
+      <div class="card-header">
+        <div class="card-name">${p.name}</div>
+        ${p.studio !== p.name ? `<div class="card-studio">${p.studio}</div>` : ''}
+      </div>
+      <div class="card-body">
+        <div class="card-location">${p.location} · ${p.region}</div>
+        <div class="card-desc">${p.desc}</div>
+        <div class="tags">
+          ${p.styles.map(s => `<span class="tag style">${s}</span>`).join('')}
+        </div>
+        <div class="feature-list">${featureHtml}</div>
+      </div>
+      <div class="card-footer">
+        <div>
+          <div class="price-main">${p.priceDisplay}</div>
+          <div class="price-sub">Startpreis / Richtpreis</div>
+        </div>
+        <span class="price-cat ${catClass}">${catLabel}</span>
+      </div>`;
+    card.onclick = () => openModal(p);
+    grid.appendChild(card);
+  });
+}
+
+function getFiltered() {
+  return PHOTOGRAPHERS.filter(p => {
+    if (activeRegion !== 'all' && p.region !== activeRegion) return false;
+    if (activeStyle !== 'all' && !p.styles.includes(activeStyle)) return false;
+    for (const f of activeFeatures) {
+      if (f === 'video' && !p.features.some(x => x.toLowerCase().includes('video'))) return false;
+      if (f === 'duo' && !p.features.some(x => x.toLowerCase().includes('duo') || x.toLowerCase().includes('zweit'))) return false;
+      if (f === 'drohne' && !p.features.some(x => x.toLowerCase().includes('drohn'))) return false;
+      if (f === 'album' && !p.features.some(x => x.toLowerCase().includes('album'))) return false;
+      if (f === 'elopement' && !p.features.some(x => x.toLowerCase().includes('elopement'))) return false;
+    }
+    if (p.priceMin > maxPrice) return false;
+    if (activeBudget !== 'all') {
+      if (activeBudget === '1000' && p.priceMin > 1000) return false;
+      if (activeBudget === '2000' && (p.priceMin < 1000 || p.priceMin > 2000)) return false;
+      if (activeBudget === '3000' && (p.priceMin < 2000 || p.priceMin > 3000)) return false;
+      if (activeBudget === 'premium' && p.priceMin < 3000) return false;
+    }
+    return true;
+  });
+}
+
+function getSorted(data) {
+  return [...data].sort((a, b) => {
+    if (currentSort === 'preis-auf') return a.priceMin - b.priceMin;
+    if (currentSort === 'preis-ab') return b.priceMin - a.priceMin;
+    if (currentSort === 'name') return a.name.localeCompare(b.name);
+    if (currentSort === 'region') return a.region.localeCompare(b.region);
+    return 0;
+  });
+}
+
+function applyFilters() { renderCards(getSorted(getFiltered())); }
+
+function toggleFilter(el) {
+  const filter = el.dataset.filter;
+  const value = el.dataset.value;
+  if (filter === 'region') {
+    document.querySelectorAll('[data-filter="region"]').forEach(e => e.classList.remove('selected'));
+    el.classList.add('selected');
+    activeRegion = value;
+  } else if (filter === 'style') {
+    document.querySelectorAll('[data-filter="style"]').forEach(e => e.classList.remove('selected'));
+    el.classList.add('selected');
+    activeStyle = value;
+  } else if (filter === 'feature') {
+    el.classList.toggle('selected');
+    activeFeatures = Array.from(document.querySelectorAll('[data-filter="feature"].selected')).map(e => e.dataset.value);
+  }
+  applyFilters();
+}
+
+function sortCards(type, btn) {
+  currentSort = type;
+  document.querySelectorAll('.sort-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  applyFilters();
+}
+
+function updatePriceFilter(val) {
+  maxPrice = parseInt(val);
+  document.getElementById('priceDisplay').textContent = val >= 4500 ? 'bis €4.500+' : `bis €${parseInt(val).toLocaleString('de')}`;
+  applyFilters();
+}
+
+function filterBudget(el, budget) {
+  document.querySelectorAll('.budget-card').forEach(b => b.classList.remove('active'));
+  el.classList.add('active');
+  activeBudget = budget;
+  applyFilters();
+  document.querySelector('.main-layout').scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+function resetFilters() {
+  activeRegion = 'all'; activeStyle = 'all'; activeFeatures = []; activeBudget = 'all'; maxPrice = 4500;
+  document.querySelectorAll('[data-filter="region"]').forEach(e => e.classList.remove('selected'));
+  document.querySelector('[data-filter="region"][data-value="all"]').classList.add('selected');
+  document.querySelectorAll('[data-filter="style"]').forEach(e => e.classList.remove('selected'));
+  document.querySelector('[data-filter="style"][data-value="all"]').classList.add('selected');
+  document.querySelectorAll('[data-filter="feature"]').forEach(e => e.classList.remove('selected'));
+  document.querySelectorAll('.budget-card').forEach(b => b.classList.remove('active'));
+  document.querySelector('[data-budget="all"]').classList.add('active');
+  document.getElementById('priceRange').value = 4500;
+  document.getElementById('priceDisplay').textContent = 'bis €4.500';
+  applyFilters();
+}
+
+function openModal(p) {
+  document.getElementById('modalName').textContent = p.name;
+  document.getElementById('modalStudio').textContent = p.studio;
+  document.getElementById('modalBody').innerHTML = `
+    <div class="modal-section">
+      <div class="modal-section-title">Standort & Region</div>
+      <div class="modal-grid">
+        <div class="modal-item"><div class="modal-item-label">Ort</div><div class="modal-item-value">${p.location}</div></div>
+        <div class="modal-item"><div class="modal-item-label">Region</div><div class="modal-item-value">${p.region}</div></div>
+      </div>
+    </div>
+    <div class="modal-section">
+      <div class="modal-section-title">Stil</div>
+      <div class="modal-tags">${p.styles.map(s => `<span class="tag">${s}</span>`).join('')}</div>
+    </div>
+    <div class="modal-section">
+      <div class="modal-section-title">Preise & Pakete</div>
+      <div class="modal-price">${p.priceDisplay}</div>
+      <div style="font-size:13px;color:var(--muted);margin-top:4px;">${p.packages}</div>
+      ${p.extras ? `<div style="font-size:12px;color:var(--muted);margin-top:8px;padding:10px;background:rgba(255,255,255,0.03);border-radius:3px;">ℹ️ ${p.extras}</div>` : ''}
+    </div>
+    <div class="modal-section">
+      <div class="modal-section-title">Lieferzeit</div>
+      <div style="font-size:13px;color:var(--text);">${p.delivery}</div>
+    </div>
+    <div class="modal-section">
+      <div class="modal-section-title">Besonderheiten</div>
+      <div class="modal-tags">${p.features.map(f => `<span class="tag">${f}</span>`).join('')}</div>
+    </div>
+    <div class="modal-section">
+      <div class="modal-section-title">Beschreibung</div>
+      <p style="font-size:13px;color:var(--muted);line-height:1.65;">${p.desc}</p>
+    </div>
+    <a class="modal-website" href="https://${p.website}" target="_blank" rel="noopener">🌐 Website öffnen: ${p.website}</a>
+  `;
+  document.getElementById('modalOverlay').classList.add('open');
+}
+
+function closeModal(e) {
+  if (e.target === document.getElementById('modalOverlay')) {
+    document.getElementById('modalOverlay').classList.remove('open');
+  }
+}
+
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') document.getElementById('modalOverlay').classList.remove('open');
+});
+
+// Init
+document.querySelector('[data-budget="all"]').classList.add('active');
+applyFilters();
+</script>
+</body>
+</html>
